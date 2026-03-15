@@ -742,7 +742,7 @@ function openStudent(id) {
   const photosHtml = `<div class="photos-row">${photos.map(p => `
     <div class="photo-card">
       ${p.url
-        ? `<img src="${p.url}" alt="${p.label}" onerror="this.parentElement.innerHTML='<div class=\'no-photo\'>ไม่มีรูป</div>'">`
+        ? `<img src="${p.url}" alt="${p.label}" onerror="this.style.display='none';this.parentElement.querySelector('.no-photo-fallback').style.display='flex'">`
         : `<div class="no-photo">ไม่มีรูป</div>`}
       <div class="photo-label">${p.label}</div>
     </div>`).join('')}</div>`;
